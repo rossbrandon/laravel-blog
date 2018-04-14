@@ -12,6 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -19,6 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -78,10 +81,16 @@
                                     <a href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li class="list-group-item">
+                                    <a href="{{ route('post.create') }}">Create New Post</a>
+                                </li>
+                                <li class="list-group-item">
                                     <a href="{{ route('categories') }}">Manage Categories</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('post.create') }}">Create New Post</a>
+                                    <a href="{{ route('posts') }}">Manage Posts</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('post.trashed') }}">Trash Bin</a>
                                 </li>
                             </ul>
                         </div>
@@ -94,4 +103,14 @@
         </main>
     </div>
 </body>
+
+<script>
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}");
+    @endif
+    @if(Session::has('info'))
+        toastr.info("{{ Session::get('info') }}");
+    @endif
+</script>
+
 </html>
