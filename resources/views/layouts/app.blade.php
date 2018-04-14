@@ -89,7 +89,7 @@
                             </ul>
                         </div>
                     @endif
-                    <div class="col-lg-10">
+                    <div class="col-lg-8">
                         @yield('content')
                     </div>
                 </div>
