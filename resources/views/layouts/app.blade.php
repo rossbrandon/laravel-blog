@@ -78,10 +78,7 @@
                                     <a href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('categories') }}">Categories</a>
-                                </li>
-                                <li class="list-group-item">
-                                    <a href="{{ route('category.create') }}">Create New Category</a>
+                                    <a href="{{ route('categories') }}">Manage Categories</a>
                                 </li>
                                 <li class="list-group-item">
                                     <a href="{{ route('post.create') }}">Create New Post</a>

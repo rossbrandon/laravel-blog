@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <div class="text-center">
-                    <button class="btn btn-success" type="submit">Update Category</button>d
+                    <button class="btn btn-success" type="submit">Update Category</button>
                 </div>
             </div>
         </form>
