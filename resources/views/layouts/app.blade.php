@@ -52,7 +52,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                       document.getElementById('logout-form').submit();"
+                                    >
                                         {{ __('Logout') }}
                                     </a>
 
@@ -69,7 +70,7 @@
 
         <main class="py-4">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     @if(Auth::check())
                         <div class="col-lg-4">
                             <ul class="list-group">
@@ -88,7 +89,7 @@
                             </ul>
                         </div>
                     @endif
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         @yield('content')
                     </div>
                 </div>
