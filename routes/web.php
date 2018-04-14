@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'as' => 'post.edit'
     ]);
 
-    Route::get('/post/update/{id}', [
+    Route::post('/post/update/{id}', [
         'uses' => 'PostsController@update',
         'as' => 'post.update'
     ]);

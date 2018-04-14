@@ -116,9 +116,9 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title',
-            'post_content',
-            'category_id'
+            'title' => 'required',
+            'post_content' => 'required',
+            'category_id' => 'required'
         ]);
 
         $post = Post::find($id);
@@ -128,7 +128,7 @@ class PostsController extends Controller
             $featuredNewName = time() . $featured->getClientOriginalName();
             $featured->move('uploads/posts', $featuredNewName);
 
-            $post->featured- $featuredNewName;
+            $post->featured = 'uploads/posts/' . $featuredNewName;
         }
 
         $post->title = $request->title;
