@@ -134,6 +134,7 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->post_content = $request->post_content;
         $post->category_id = $request->category_id;
+        $post->slug = str_slug($request->title);
 
         $post->save();
 
