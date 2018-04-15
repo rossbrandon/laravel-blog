@@ -6,18 +6,18 @@
 
     <div class="card">
         <div class="card-heading">
-            <strong>Update Category: {{ $category->name }}</strong>
+            <strong>Edit Tag: {{ $tag->name }}</strong>
         </div>
         <div class="card-body">
-            <form action="{{ route('category.update', ['id' => $category->id]) }}" method="post">
+            <form action="{{ route('tag.update', ['id' => $tag->id]) }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" value="{{ $category->name }}" class="form-control" />
+                    <label for="tag">Name</label>
+                    <input type="text" name="tag" value="{{ $tag->tag }}" class="form-control" />
                 </div>
                 <div class="form-group">
                     <div class="text-center">
-                        <button class="btn btn-success" type="submit">Update Category</button>
+                        <button class="btn btn-success" type="submit">Update Tag</button>
                     </div>
                 </div>
             </form>

@@ -90,6 +90,9 @@
                                     <a href="{{ route('posts') }}">Manage Posts</a>
                                 </li>
                                 <li class="list-group-item">
+                                    <a href="{{ route('tags') }}">Manage Tags</a>
+                                </li>
+                                <li class="list-group-item">
                                     <a href="{{ route('post.trashed') }}">Trash Bin</a>
                                 </li>
                             </ul>
@@ -107,9 +110,10 @@
 <script>
     @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");
-    @endif
-    @if(Session::has('info'))
+    @elseif(Session::has('info'))
         toastr.info("{{ Session::get('info') }}");
+    @elseif(Session::has('error'))
+        toastr.error("{{ Session::get('error') }}");
     @endif
 </script>
 

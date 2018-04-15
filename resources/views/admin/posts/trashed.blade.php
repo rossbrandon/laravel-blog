@@ -5,15 +5,18 @@
 
     @include('admin.includes.errors')
 
-    <div class="panel panel-default">
-        <h1>Trashed Posts</h1>
-        <div class="panel-body">
+    <div class="card">
+        <div class="card-header">
+            <strong>Trashed Posts</strong>
+        </div>
+
+        <div class="card-body">
             <table class="table table-hover">
                 <thead>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Restore</th>
-                <th>Destroy</th>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Restore</th>
+                    <th>Destroy</th>
                 </thead>
                 <tbody>
                     @if($posts->count() > 0)
