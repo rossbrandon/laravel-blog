@@ -5,9 +5,10 @@
     @include('admin.includes.errors')
 
     <div class="card">
-        <div class="card-heading">
+        <div class="card-header">
             <strong>Edit Tag: {{ $tag->name }}</strong>
         </div>
+
         <div class="card-body">
             <form action="{{ route('tag.update', ['id' => $tag->id]) }}" method="post">
                 {{ csrf_field() }}

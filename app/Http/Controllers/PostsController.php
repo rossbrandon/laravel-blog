@@ -83,7 +83,7 @@ class PostsController extends Controller
 
         Session::flash('success', "Post created");
 
-        return redirect()->back();
+        return redirect()->route('posts');
 
     }
 

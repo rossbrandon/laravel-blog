@@ -5,7 +5,7 @@
     @include('admin.includes.errors')
 
     <div class="card">
-        <div class="card-heading">
+        <div class="card-header">
             <strong>Create a new post</strong>
         </div>
         <div class="card-body">

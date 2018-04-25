@@ -12,7 +12,7 @@
     @endif
 
     <div class="card">
-        <div class="card-heading">
+        <div class="card-header">
             <strong>Edit post: {{ $post->title }}</strong>
         </div>
         <div class="card-body">
