@@ -158,6 +158,26 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         'uses' => 'UsersController@revert',
         'as' => 'user.revert'
     ]);
+
+    Route::get('/user/profile', [
+        'uses' => 'ProfilesController@index',
+        'as' => 'user.profile'
+    ]);
+
+    Route::post('/user/profile/update', [
+       'uses' => 'ProfilesController@update',
+       'as' => 'user.profile.update'
+    ]);
+
+    Route::get('/settings', [
+        'uses' => 'SettingsController@index',
+        'as' => 'settings'
+    ]);
+
+    Route::post('/settings/update', [
+        'uses' => 'SettingsController@update',
+        'as' => 'settings.update'
+    ]);
 });
 
 

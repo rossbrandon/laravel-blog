@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
@@ -13,7 +15,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.users.profile')->with('user', Auth::user());
     }
 
     /**
@@ -63,12 +65,43 @@ class ProfilesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'avatar' => 'image',
+            'facebook' => 'url',
+            'youtube' => 'url'
+        ]);
+
+        $user = Auth::user();
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->avatar;
+            $avatarUniqueName = time() . $avatar->getClientOriginalName();
+            $avatar->move('uploads/avatars', $avatarUniqueName);
+            $user->profile->avatar = 'uploads/avatars/' . $avatarUniqueName;
+        }
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->profile->about = $request->has('about') ? $request->about : null;
+        $user->profile->facebook = $request->has('facebook') ? $request->facebook : null;
+        $user->profile->youtube = $request->has('youtube') ? $request->youtube : null;
+
+        if ($request->has('password') && $request->password != null && $request->password != '') {
+            $user->password = bcrypt($request->password);
+        }
+
+        $user->save();
+        $user->profile->save();
+
+        Session::flash('success', 'Profile updated');
+
+        return redirect()->back();
     }
 
     /**
@@ -79,6 +112,6 @@ class ProfilesController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

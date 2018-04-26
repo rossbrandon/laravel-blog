@@ -28,6 +28,8 @@
         </div>
     </div>
 
+    <br />
+
     <div class="card">
         <div class="card-header">
             <strong>All Users</strong>
@@ -44,7 +46,7 @@
                     @if($users->count() > 0)
                         @foreach($users as $user)
                             <tr>
-                                <td><img src="../{{ asset($user->profile->avatar) }}" alt="" width="40px" height="30px" style="border-radius: 50%;" /></td>
+                                <td><img src="{{ asset($user->profile->avatar) }}" alt="Avatar Thumbnail" width="50px" height="50px" style="border-radius: 50%;" /></td>
                                 <td>{{ $user->name }}</td>
                                 <td>
                                     @if($user->admin)
@@ -53,7 +55,14 @@
                                         <a href="{{ route('user.admin', ['id' => $user->id]) }}" class="btn btn-success">Make Admin</a>
                                     @endif
                                 </td>
-                                <td><a href="{{ route('user.delete', ['id' => $user->id])  }}" class="btn btn-danger">Delete</a></td>
+                                <!--
+                                <td><a href="{{ route('user.profile.update', ['id' => $user->id])  }}" class="btn btn-info">Edit Profile</a></td>
+                                -->
+                                <td>
+                                    @if(Auth::id() != $user->id)
+                                        <a href="{{ route('user.delete', ['id' => $user->id])  }}" class="btn btn-danger">Delete</a>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     @else

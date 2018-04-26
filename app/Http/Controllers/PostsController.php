@@ -40,16 +40,17 @@ class PostsController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $tags = Tag::all();
 
-        if ($categories->count() == 0) {
-            Session::flash('info', 'Create a Category before posting!');
+        if ($categories->count() == 0 || $tags->count() == 0) {
+            Session::flash('info', 'Create a Category and Tag before posting');
 
             return redirect()->back();
         }
 
         return view('admin.posts.create')
             ->with('categories', $categories)
-            ->with('tags', Tag::all());
+            ->with('tags', $tags);
     }
 
     /**
@@ -62,19 +63,23 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|max:255',
-            'featured' => 'required|image',
+            'featured' => 'image',
             'post_content' => 'required',
             'category_id' => 'required'
         ]);
 
-        $featured = $request->featured;
-        $featuredNewName = time() . $featured->getClientOriginalName();
-        $featured->move('uploads/posts', $featuredNewName);
+        $featuredUniqueName = 'stock-image.jpeg';
+        if ($request->has('featured')) {
+            $featured = $request->featured;
+            $featuredUniqueName = time() . $featured->getClientOriginalName();
+            $featured->move('uploads/posts', $featuredUniqueName);
+        }
+
 
         $post = Post::create([
             'title' => $request->title,
             'post_content' => $request->post_content,
-            'featured' => 'uploads/posts/' . $featuredNewName,
+            'featured' => 'uploads/posts/' . $featuredUniqueName,
             'category_id' => $request->category_id,
             'slug' => str_slug($request->title)
         ]);

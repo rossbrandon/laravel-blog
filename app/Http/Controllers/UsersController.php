@@ -9,7 +9,8 @@ use App\Profile;
 
 class UsersController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('admin');
     }
 
@@ -54,7 +55,7 @@ class UsersController extends Controller
 
         $profile = Profile::create([
             'user_id' => $user->id,
-            'avatar' => 'uploads/avatars/avatar-guy.png'
+            'avatar' => 'uploads/avatars/avatar-guy.jpg'
         ]);
 
         Session::flash('success', 'User added');
@@ -105,7 +106,10 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+        $user->profile->delete();
         $user->delete();
+
+        Session::flash('success', 'User deleted');
 
         return redirect()->back();
     }

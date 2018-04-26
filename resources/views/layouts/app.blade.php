@@ -49,10 +49,15 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }}
+                                    @if(Auth::user()->admin)
+                                        (Admin)
+                                    @endif
+                                    <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('user.profile') }}">My Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();"
@@ -100,6 +105,11 @@
                                 <li class="list-group-item">
                                     <a href="{{ route('post.trashed') }}">Trash Bin</a>
                                 </li>
+                                @if(Auth::user()->admin)
+                                    <li class="list-group-item">
+                                        <a href="{{ route('settings') }}">Settings</a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     @endif
@@ -110,16 +120,18 @@
             </div>
         </main>
     </div>
-</body>
 
-<script>
-    @if(Session::has('success'))
+    <!-- Scripts -->
+    <script>
+        @if(Session::has('success'))
         toastr.success("{{ Session::get('success') }}");
-    @elseif(Session::has('info'))
+        @elseif(Session::has('info'))
         toastr.info("{{ Session::get('info') }}");
-    @elseif(Session::has('error'))
+        @elseif(Session::has('error'))
         toastr.error("{{ Session::get('error') }}");
-    @endif
-</script>
+        @endif
+    </script>
+    @yield('scripts')
 
+</body>
 </html>
