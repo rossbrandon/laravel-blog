@@ -21,10 +21,10 @@
             @if($user->profile->facebook || $user->profile->youtube)
                 <hr />
                 @if($user->profile->facebook)
-                    <a href="{{ $user->profile->facebook }}" class="btn-sm btn-secondary">Facebook</a>
+                    <a href="{{ $user->profile->facebook }}" target="_blank" class="btn-sm btn-secondary">Facebook</a>
                 @endif
                 @if($user->profile->youtube)
-                    <a href="{{ $user->profile->youtube }}" class="btn-sm btn-secondary">YouTube</a>
+                    <a href="{{ $user->profile->youtube }}" target="_blank" class="btn-sm btn-secondary">YouTube</a>
                 @endif
             @endif
         </div>
