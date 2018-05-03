@@ -86,12 +86,6 @@
     </symbol>
 </svg>
 
-<!-- Overlay Search -->
-
-@include('includes.search')
-
-<!-- End Overlay Search -->
-
 <!-- JS Script -->
 
 <script src="{{ asset('app/js/jquery-2.1.4.min.js') }}"></script>
