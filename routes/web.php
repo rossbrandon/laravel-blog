@@ -11,8 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', [
+   'uses' => 'FrontEndController@index',
+   'as' => 'index'
+]);
+
+Route::get('/post/{slug}', [
+    'uses' => 'FrontEndController@singlePost',
+    'as' => 'post.single'
+]);
+
+Route::get('/category/{id}', [
+    'uses' => 'FrontEndController@category',
+    'as' => 'category.single'
+]);
+
+Route::get('/tag/{id}', [
+    'uses' => 'FrontEndController@tag',
+    'as' => 'tag.single'
+]);
+
+Route::get('/results', function() {
+    $posts = App\Post::where('title', 'like', '%' . request('query') . '%')->get();
+    return view('results')
+        ->with('query', request('query'))
+        ->with('posts', $posts)->with('title', 'Search results: ' . request('query'))
+        ->with('categories', App\Category::take(4)->get())
+        ->with('settings', App\Setting::first());
 });
 
 Auth::routes();

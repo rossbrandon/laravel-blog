@@ -28,6 +28,10 @@
                     <input type="text" name="address" class="form-control" value="{{ $settings->address }}" />
                 </div>
                 <div class="form-group">
+                    <label for="address">Address Line 2</label>
+                    <input type="text" name="address2" class="form-control" value="{{ $settings->address2 }}" />
+                </div>
+                <div class="form-group">
                     <div class="text-center">
                         <button class="btn btn-success" type="submit">Update Site Settings</button>
                     </div>
