@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" name="title" class="form-control" />

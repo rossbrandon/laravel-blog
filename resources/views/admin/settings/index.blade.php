@@ -10,7 +10,7 @@
         </div>
         <div class="card-body">
             <form action="{{ route('settings.update') }}" method="post">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="site_name">Site Name</label>
                     <input type="text" name="site_name" class="form-control" value="{{ $settings->site_name }}" />

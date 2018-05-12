@@ -40,11 +40,16 @@ Route::get('/results', function() {
         ->with('settings', App\Setting::first());
 });
 
+Route::post('/subscribe', function() {
+   Newsletter::subscribe(request('email'));
+   return redirect()->back();
+});
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
-    Route::get('/home', [
+    Route::get('/dashboard', [
         'uses' => 'HomeController@index',
         'as' => 'home'
     ]);

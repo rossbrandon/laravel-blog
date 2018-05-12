@@ -11,7 +11,7 @@
 
         <div class="card-body">
             <form action="{{ route('tag.update', ['id' => $tag->id]) }}" method="post">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="tag">Name</label>
                     <input type="text" name="tag" value="{{ $tag->tag }}" class="form-control" />

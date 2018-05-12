@@ -38,7 +38,7 @@
         </div>
         <div class="card-body">
             <form action="{{ route('user.profile.update') }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="name">Username</label>
                     <input type="text" name="name" class="form-control" value="{{ $user->name }}" />

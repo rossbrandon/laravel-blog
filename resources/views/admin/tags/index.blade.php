@@ -11,7 +11,7 @@
 
         <div class="card-body">
             <form action="{{ route('tag.store') }}" method="post">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="tag">Tag</label>
                     <input type="text" name="tag" class="form-control" />

@@ -17,7 +17,7 @@
         </div>
         <div class="card-body">
             <form action="{{ route('post.update', ['id' => $post->id]) }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" name="title" class="form-control" value="{{ $post->title }}" />

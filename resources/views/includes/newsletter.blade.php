@@ -5,13 +5,14 @@
                 <div class="subscribe scrollme">
                     <div class="col-lg-6 col-lg-offset-5 col-md-6 col-md-offset-5 col-sm-12 col-xs-12">
                         <h4 class="subscribe-title">Email Newsletters!</h4>
-                        <form class="subscribe-form" method="post" action="">
+                        <form class="subscribe-form" method="post" action="/subscribe">
+                            @csrf
                             <input class="email input-standard-grey input-white" name="email" required="required" placeholder="Cambridge Analytica wants your email..." type="email">
-                            <button class="subscr-btn">spamscribe
-                                <span class="semicircle--right"></span>
+                            <button class="subscr-btn" type="submit">
+                                spamscribe<span class="semicircle--right"></span>
                             </button>
                         </form>
-                        <div class="sub-title">Just kidding... I'm not gonna email you shit.</div>
+                        <div class="sub-title">I hope your spam filter works...</div>
 
                     </div>
 

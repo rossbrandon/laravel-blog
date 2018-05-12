@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('app/css/swiper.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('app/css/primary-menu.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('app/css/magnific-popup.css') }}">
+<link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 
 <!--Styles for RTL-->
 
