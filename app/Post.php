@@ -17,7 +17,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'post_content', 'featured', 'category_id', 'slug'
+        'title', 'post_content', 'featured', 'category_id', 'slug', 'user_id'
     ];
 
     public function category()
@@ -28,6 +28,11 @@ class Post extends Model
     public function tags()
     {
         return $this->belongsToMany('App\Tag');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
     public function getFeaturedAttribute($featured)

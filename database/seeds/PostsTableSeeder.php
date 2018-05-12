@@ -30,6 +30,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:23:33',
                 'updated_at' => '2018-05-12 01:23:33',
+                'user_id' => 1,
             ),
             1 => 
             array (
@@ -46,6 +47,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:24:08',
                 'updated_at' => '2018-05-12 01:52:40',
+                'user_id' => 1,
             ),
             2 => 
             array (
@@ -62,6 +64,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:25:03',
                 'updated_at' => '2018-05-12 01:25:03',
+                'user_id' => 1,
             ),
             3 => 
             array (
@@ -78,6 +81,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:49:39',
                 'updated_at' => '2018-05-12 01:49:39',
+                'user_id' => 1,
             ),
             4 => 
             array (
@@ -94,6 +98,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:50:59',
                 'updated_at' => '2018-05-12 01:51:47',
+                'user_id' => 1,
             ),
             5 => 
             array (
@@ -110,6 +115,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:52:10',
                 'updated_at' => '2018-05-12 01:52:10',
+                'user_id' => 1,
             ),
             6 => 
             array (
@@ -122,6 +128,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:53:24',
                 'updated_at' => '2018-05-12 01:54:27',
+                'user_id' => 1,
             ),
             7 => 
             array (
@@ -134,6 +141,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:56:01',
                 'updated_at' => '2018-05-12 01:56:01',
+                'user_id' => 1,
             ),
             8 => 
             array (
@@ -146,6 +154,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:57:17',
                 'updated_at' => '2018-05-12 01:57:17',
+                'user_id' => 1,
             ),
             9 => 
             array (
@@ -164,6 +173,7 @@ class PostsTableSeeder extends Seeder
                 'deleted_at' => NULL,
                 'created_at' => '2018-05-12 01:58:59',
                 'updated_at' => '2018-05-12 01:58:59',
+                'user_id' => 1,
             ),
         ));
     }

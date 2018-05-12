@@ -19,7 +19,6 @@ class CreateSettingsTable extends Migration
             $table->string('contact_number');
             $table->string('contact_email');
             $table->string('address');
-            $table->string('address2');
             $table->timestamps();
         });
     }
