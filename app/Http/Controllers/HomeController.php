@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Category;
+use App\Tag;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,7 @@ class HomeController extends Controller
             ->with('published_count', Post::all()->count())
             ->with('trashed_count', Post::onlyTrashed()->count())
             ->with('user_count', User::all()->count())
-            ->with('category_count', Category::all()->count());
+            ->with('category_count', Category::all()->count())
+            ->with('tag_count', Tag::all()->count());
     }
 }

@@ -7,9 +7,8 @@
                 {{ session('status') }}
             </div>
         @endif
-
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-6">
                 <div class="card text-white bg-success">
                     <div class="card-header text-center">Published Posts</div>
                     <div class="card-body">
@@ -17,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-6">
                 <div class="card text-white bg-danger">
                     <div class="card-header text-center">Trashed Posts</div>
                     <div class="card-body">
@@ -25,7 +24,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
                 <div class="card text-white bg-info">
                     <div class="card-header text-center">Users</div>
                     <div class="card-body">
@@ -33,11 +35,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="card text-white bg-dark">
                     <div class="card-header text-center">Categories</div>
                     <div class="card-body">
                         <h1 class="text-center">{{ $category_count }}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card bg-light">
+                    <div class="card-header text-center">Tags</div>
+                    <div class="card-body">
+                        <h1 class="text-center">{{ $tag_count }}</h1>
                     </div>
                 </div>
             </div>
