@@ -17,9 +17,11 @@
                             @foreach($posts as $post)
                                 <div class="col-lg-4  col-md-4 col-sm-6 col-xs-12">
                                     <div class="case-item">
-                                        <div class="case-item__thumb mouseover poster-3d lightbox shadow animation-disabled" data-offset="5">
-                                            <img src="{{ $post->featured }}" alt="Post Image">
-                                        </div>
+                                        <a href="{{ route('post.single', ['slug' => $post->slug ]) }}">
+                                            <div class="case-item__thumb mouseover poster-3d lightbox shadow animation-disabled" data-offset="5">
+                                                <img src="{{ $post->featured }}" alt="Post Image">
+                                            </div>
+                                        </a>
                                         <a href="{{ route('post.single', ['slug' => $post->slug]) }}">
                                             <h6 class="case-item__title">{{ $post->title }}</h6>
                                         </a>

@@ -23,9 +23,9 @@ class FrontEndController extends Controller
             ->with('first_post', Post::orderBy('created_at', 'desc')->first())
             ->with('second_post', Post::orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first())
             ->with('third_post', Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first())
-            ->with('php', Category::find(4))
-            ->with('laravel', Category::find(6))
-            ->with('random', Category::find(7))
+            ->with('first_highlight', Category::where('name', 'PHP')->first())
+            ->with('second_highlight', Category::where('name', 'Laravel')->first())
+            ->with('third_highlight', Category::where('name', 'Magento')->first())
             ->with('settings', Setting::first());
     }
 
